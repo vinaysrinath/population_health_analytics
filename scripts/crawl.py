@@ -5,6 +5,20 @@ from bs4 import BeautifulSoup
 import os, errno
 import subprocess
 
+"""
+Following dependencies are required to be installed:
+BeautifulSoup, beautifulsoup4, wget
+
+These can be installed easily using pip.
+
+virtualenv env
+sudo pip install BeautifulSoup beautifulsoup4 wget
+env/bin/activate
+
+python crawl.py
+
+"""
+
 def mkdir_p(path):
     try:
         os.makedirs(path)
