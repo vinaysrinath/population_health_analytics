@@ -95,9 +95,18 @@ for begin_year in begin_years:
         for datum in data:
             label = datum[2]["label"]
             file_url = datum[2]["href"]
+            file_name = "DATA"
+            if "XPT" in label:
+                file_name = "%s.XPT"%(label.split()[0])
+            elif "ZIP" in label:
+                file_name = "%s.ZIP"%(label.split()[0])
+            else:
+                file_name = label
+
+            output_file = os.path.join(download_path, file_name)
             print "Downloading: %s from %s"%(label, file_url)
-            #output_file = "%s/%s"%(download_path, OUT_FILE)
-            wget.download(url) #, out=output_file)
+            print "   to the folder: %s"%(output_file)
+            wget.download(file_url, out=output_file)
             print
             print
 
