@@ -2,7 +2,7 @@ import urllib2
 import bs4
 from bs4 import BeautifulSoup
 # import wget
-import os, errno
+import os, errno, sys
 import subprocess
 
 """
@@ -50,6 +50,15 @@ components = [
 ]
 
 original_path = os.getcwd()
+
+args = sys.argv
+# print args
+skip_download = True if (len(args) >= 2 and
+                        args[1] == "skip_download") else False
+
+
+if skip_download:
+    print "Skip all downloads... just crawl and print"
 
 for begin_year in begin_years:
 
@@ -106,6 +115,7 @@ for begin_year in begin_years:
 
         os.chdir(download_path)
         for datum in data:
+            dataset_name = datum[0]
             label = datum[2]["label"]
             file_url = datum[2]["href"]
             file_name = "DATA"
@@ -120,10 +130,13 @@ for begin_year in begin_years:
                 file_name = label
 
             output_file = os.path.join(download_path, file_name)
-            print "Downloading: %s from %s"%(label, file_url)
+            print "Downloading: %s =>  %s from %s"%(dataset_name, label, file_url)
             print "   to the folder: %s"%(output_file)
             cmd = ["wget", "-c", "-O", output_file, file_url]
-            subprocess.call(cmd)
+            if skip_download:
+                pass
+            else:
+                subprocess.call(cmd)
 
             # wget.download(file_url, out=output_file)
             print
