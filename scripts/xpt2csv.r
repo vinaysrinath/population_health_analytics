@@ -8,4 +8,4 @@ print(out_fname)
 
 df = read.xport(fname)
 
-write.csv2(df, file=out_fname)
+write.csv(df, file=out_fname, row.names=FALSE)
