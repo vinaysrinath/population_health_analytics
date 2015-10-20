@@ -24,7 +24,7 @@ Now execute the crawl/download script:
 All the data will be downloaded to `downloads` folder. Once that is complet
 
 
-### Conver to CSV
+### Convert to CSV
 
 A simple Shell script does all the files conversion for us. Just go the the dowloads folder and execute the following script:
 
@@ -32,5 +32,18 @@ A simple Shell script does all the files conversion for us. Just go the the dowl
 
 All the XPT files will be converted CSV files, and now we are good to explore all these files using any tools of choice.
 
+
+### Merge all CSV file
+
+We use a Python script `mongoimport.py` to insert all the CSV, while merging the non-existing fileds into a Mongo collection.
+
+    cd downloads/
+    find . -name "*.csv" -exec python ../mongoimport.py "{}" \; | tee mongo-import.log
+	
+
+Once all CSV files are imported into MongoDB, we can extract it out as a CSV file.
+
+
+    mongoexport --db nhanes --collection master --csv --out nhanes-master.csv
 
 
