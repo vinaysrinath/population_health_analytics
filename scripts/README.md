@@ -44,6 +44,21 @@ We use a Python script `mongoimport.py` to insert all the CSV, while merging the
 Once all CSV files are imported into MongoDB, we can extract it out as a CSV file.
 
 
-    mongoexport --db nhanes --collection master --csv --out nhanes-master.csv
+    cat ../all-fields-mapping.txt  | sed 's/ =>.*//g' | sort | uniq > fields-list.txt
+    mongoexport --db nhanes --collection master --csv --out nhanes-master.csv --fieldFile fields-list.txt
+
+
+Another alternative is to dump all the mongodb data in its native BSON format
+
+    mongodump -d nhanes -c master -o nhanes-mongo-db
+
+Then create an archive to transfer over wire:
+
+    $ tar cvjf nhanes-mongodb.tar.bz2 nhanes-mongo-db/
+    nhanes-mongo-db/
+    nhanes-mongo-db/nhane/
+    nhanes-mongo-db/nhanes/
+    nhanes-mongo-db/nhanes/master.bson
+    nhanes-mongo-db/nhanes/master.metadata.json
 
 
