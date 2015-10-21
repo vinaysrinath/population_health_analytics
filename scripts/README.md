@@ -62,3 +62,7 @@ Then create an archive to transfer over wire:
     nhanes-mongo-db/nhanes/master.metadata.json
 
 
+To restore ( import ) back into a separate MongoDB server [instructions](https://stackoverflow.com/questions/6770498/how-to-import-bson-file-format-on-mongodb):
+
+    mongorestore -d nhanes -c master nhanes-mongo-db/nhanes/master.bson
+
