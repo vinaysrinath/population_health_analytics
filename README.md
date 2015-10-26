@@ -1,8 +1,27 @@
-# 6440_T20
+# CS 6440 Team 20
 
+## Project Details
 
-Developer documentation goes here.
+### Domain
 
-## section 1
+We are focusing on creating a population health application.
 
-## section 2
+### Mentor
+
+Chris Harmoney
+
+### Team Members
+
+Osman Din (osman.din@gatech.edu)
+Ravneet Grewal (ravneet@gatech.edu)
+Saleem Ansari (sansari9@gatech.edu)
+Vinay Srinath (vsrinath6@gatech.edu)
+Felix Kwizera (fkwizera3@gatech.edu)
+
+### Technology
+
+## Stack
+
+Java 8, Apache Maven, AngularJS, Bootstrap, jQuery, HTML5, JBoss RESTEasy (JAX-RS for web services), 
+Apache Tomcat 8, Amazon EC2, NoSQL (database), ApacheSpark (data processing framework)
+
