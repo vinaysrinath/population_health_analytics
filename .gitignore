@@ -8,7 +8,7 @@
 *.iws
 
 
-*/target/
+target/
 
 *.log
 *.exe
