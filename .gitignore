@@ -1,0 +1,16 @@
+.classpath
+.project
+.settings/
+
+#
+.idea/
+*.iml
+*.iws
+
+
+*/target/
+
+*.log
+*.exe
+*.doc
+*.class
