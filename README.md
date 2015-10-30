@@ -21,3 +21,6 @@ Osman Din (osman.din@gatech.edu), Ravneet Grewal (ravneet@gatech.edu), Saleem An
 Java 8, Apache Maven, AngularJS, Bootstrap, jQuery, HTML5, JBoss RESTEasy (JAX-RS for web services), 
 Apache Tomcat 8, Amazon EC2, NoSQL (database), ApacheSpark (data processing framework)
 
+### REST Interface
+
+application/rest/report/{param}
