@@ -21,3 +21,12 @@ The User Interface is accessible from
 http:&lt;host&gt;:&lt;port&gt;/PopHealth
 
 ### Screens
+
+Grid screen
+
+![](https://github.gatech.edu/odin3/6440_T20/blob/master/WebApp/Mockups/PopHealth1.png)
+
+
+Charts screen
+
+![](https://github.gatech.edu/odin3/6440_T20/blob/master/WebApp/Mockups/PopHealth2.png)
