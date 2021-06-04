@@ -34,7 +34,7 @@
         <javaee-api.version>7.0</javaee-api.version>
         <surefire.version>4.12</surefire.version>
         <slf4j.version>1.7.10</slf4j.version>
-        <httpclient.version>4.4</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <logback.version>1.1.2</logback.version>
     </properties>
 
